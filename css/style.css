@@ -102,7 +102,7 @@ main {
   border: var(--main-border);
   border-radius: 5px;
   box-shadow: var(--box-shadow);
-  max-width: 650px;
+  max-width: 1200px;
   padding: 1rem;
   min-width: 400px;
 }
