@@ -1,6 +1,0 @@
-
-RewriteCond %{REQUEST_URI} !/inc/login.php [NC]
-RewriteRule ^(.*)/[0-9]+/?$ /$1/? [L,R=301]
-
-RewriteCond %{REQUEST_URI} !/inc/register.php [NC]
-RewriteRule ^(.*)/[0-9]+/?$ /$1/? [L,R=301]
