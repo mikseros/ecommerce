@@ -20,7 +20,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         body{ font: 14px sans-serif; text-align: center; }
     </style>
 </head>
-<body>
+<body class="bg-secondary">
     <div id="table" class="listing"><?php require __DIR__ . '/table.php'; ?></div>
     <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["mail"]); ?></b>. Welcome to our site.</h1>
     <p>

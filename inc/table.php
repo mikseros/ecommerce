@@ -6,7 +6,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-echo "<table>";
+echo "<table class='table table-striped table-dark'>";
  echo "<tr><th>Title</th><th>Description</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {
