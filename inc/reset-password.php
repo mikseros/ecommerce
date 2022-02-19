@@ -78,11 +78,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Password</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body{ font: 14px sans-serif; text-align: center; }
-        .wrapper{ width: 360px; padding: 20px; margin:auto; }
+        .wrapper{ width: 360px; padding: 20px; margin: auto; }
     </style>
 </head>
 <body class="bg-secondary">
