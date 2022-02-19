@@ -113,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     <style>
         body{ font: 14px sans-serif; text-align: center; }
-        .wrapper{ width: 360px; padding: 20px; margin: auto;}
+        .wrapper{ max-width: 360px; padding: 20px; margin: auto;}
     </style>
 </head>
 <body class="bg-secondary">
