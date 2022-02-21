@@ -25,11 +25,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <div id="table" class="listing"><?php require __DIR__ . '/table.php'; ?></div>
     <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["mail"]); ?></b>. Welcome to our site.</h1>
     <p>
-        <a href="item-add.php" class="btn btn-success ml-1">Add New Product</a>
-    </p>
-    <p>
-        <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
+        <a href="item-add.php" class="btn btn-success mr-1 mt-2 mt-md-0">Add New Product</a>
+        <a href="reset-password.php" class="btn btn-warning ml-0 ml-md-2 mt-2 mt-md-0">Reset Your Password</a>
+        <a href="logout.php" class="btn btn-danger ml-0 ml-md-2 mt-2 mt-md-0">Sign Out of Your Account</a>
     </p>
 </body>
 </html>

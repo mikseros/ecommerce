@@ -2,11 +2,12 @@
 
 session_start();
 
-// Check if the user is already logged in, if no then redirect him to login page
-if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
+
 // Include config file
 require_once "config.php";
  
@@ -96,6 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Add Product">
                 <input type="reset" class="btn btn-secondary ml-2" value="Reset">
+                <a class="btn btn-link ml-2" href="welcome.php">Cancel</a>
             </div>
         </form>
     </div>    
