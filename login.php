@@ -15,11 +15,7 @@ if (isset($_POST['login'])) {
     if (empty($email) || empty($password)) {
         $msg = "Saisissez l'email' et le mot de passe %s";
     } else {
-        $query = "
-            SELECT email, password
-            FROM users
-            WHERE username = :username
-        ";
+        $query = "SELECT email, password FROM users WHERE email = :email";
         
         $check = $dbh->prepare($query);
         $check->bindParam(':email', $email, PDO::PARAM_STR);
@@ -39,5 +35,5 @@ if (isset($_POST['login'])) {
         }
     }
     
-    printf($msg, '<a href="../index.php">Revenir en arrière</a>');
+    printf($msg, '<a href="index.php">Revenir en arrière</a>');
 }

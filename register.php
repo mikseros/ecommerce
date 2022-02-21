@@ -26,11 +26,7 @@ if (isset($_POST['register'])) {
     } else {
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-        $query = "
-            SELECT id
-            FROM users
-            WHERE email = :email
-        ";
+        $query = " SELECT id FROM users WHERE email = :email";
         
         $check = $dbh->prepare($query);
         $check->bindParam(':email', $email, PDO::PARAM_STR);
@@ -41,10 +37,7 @@ if (isset($_POST['register'])) {
         if (count($user) > 0) {
             $msg = 'Email déjà présent %s';
         } else {
-            $query = "
-                INSERT INTO users
-                VALUES (:email, :password)
-            ";
+            $query = "INSERT INTO users VALUES (NULL, :email, :password)";
         
             $check = $dbh->prepare($query);
             $check->bindParam(':email', $email, PDO::PARAM_STR);
@@ -59,5 +52,5 @@ if (isset($_POST['register'])) {
         }
     }
     
-    printf($msg, '<a href="../index.php">Revenir en arrière</a>');
+    printf($msg, ' <a href="index.php">Revenir en arrière</a>');
 }
