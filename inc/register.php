@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: welcome.php");
@@ -40,7 +38,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $mail_err = "This email has been already taken.";
                 } else{
                     $mail = trim($_POST["mail"]);
-                    alert("New User successfully created!");
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again.";
@@ -51,13 +48,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     
-    // Validate password
+    // Validate new password
     if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter correct password.";     
-    } elseif(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Password must have at least 6 characters.";
+        $new_password_err = "Please enter the new password.";     
+    } elseif (check_password($_POST["password"] !== ($_POST["password"]))){
+        $new_password_err = "Wrong password.";
     } else{
-        $password = trim($_POST["password"]);
+        $new_password = trim($_POST["password"]);
     }
     
     // Validate confirm password
