@@ -49,12 +49,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Validate new password
+    // Validate new password
     if(empty(trim($_POST["password"]))){
-        $new_password_err = "Please enter the new password.";     
+        $password_err = "Please enter the new password.";     
     } elseif (check_password($_POST["password"] !== ($_POST["password"]))){
-        $new_password_err = "Wrong password.";
+        $password_err = "Password must have atleast 8 characters; number; special char; big & small letter .";
     } else{
-        $new_password = trim($_POST["password"]);
+        $password = trim($_POST["password"]);
     }
     
     // Validate confirm password
