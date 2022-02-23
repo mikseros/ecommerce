@@ -1,0 +1,9 @@
+{
+    "name": "mikseros/ecommerce",
+    "description": "Simple training app created with MVC famework in PHP",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
