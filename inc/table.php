@@ -27,15 +27,10 @@ class TableRows extends RecursiveIteratorIterator {
     }
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "comm";
+require_once "config.php";
 
 try {
-    $conn = new PDO("mysql:host=$servername;port=3308;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT title, text FROM articles");
+    $stmt = $pdo->prepare("SELECT title, text FROM articles");
     $stmt->execute();
 
     // set the resulting array to associative
@@ -48,6 +43,6 @@ try {
 catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
-$conn = null;
+$pdo = null;
 echo "</table>";
 ?>
